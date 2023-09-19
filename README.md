@@ -11,16 +11,16 @@ Temperature Converter application which is used to convert diffrent temperatures
 - Good UI interactions.
 
 # User InterFace
-![Temperature main](https://github.com/Pvamsi02/Temperature_Converter/assets/112920388/61eac1a8-9330-40e2-8e68-f7889f3cf6a6)
+![Temperature main](https://github.com/Pvamsi02/Temperature_Converter/assets/112920388/d8b04fab-276b-4951-9513-a47e5da4ca83)
 
 # Darkmode
-![Temperature Dark](https://github.com/Pvamsi02/Temperature_Converter/assets/112920388/811773ba-14fc-4248-a6dc-6338d7433af3)
+![Temperature Dark](https://github.com/Pvamsi02/Temperature_Converter/assets/112920388/01479c43-546c-498d-9872-f13a8ccc9d80)
 
 # Options 
-![Temperature Options](https://github.com/Pvamsi02/Temperature_Converter/assets/112920388/9187023e-1559-4301-8a5f-bb4dd3f6aaa7)
+![Temperature Options](https://github.com/Pvamsi02/Temperature_Converter/assets/112920388/d9ecfdc2-ffba-411e-b20a-1be60d3bdd76)
 
 # Calculation Part
-![Temperature Calc](https://github.com/Pvamsi02/Temperature_Converter/assets/112920388/85032187-b2aa-43cc-9966-2cbff20bcd48)
+![Temperature Calc](https://github.com/Pvamsi02/Temperature_Converter/assets/112920388/423e4de2-b03c-43cb-84f1-965ce32b308b)
 
 
 
