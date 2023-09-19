@@ -4,7 +4,7 @@
         <item>Celsius(°C)</item>
         <item>Fahrenheit(°F)</item>
         <item>Kelvin(K)</item>
-        <item>Rankine(°R)</item>
+            <item>Rankine(°R)</item>
     </string-array>
     <string-array name="temperature1_array">
         <item>Fahrenheit(°F)</item>
@@ -16,4 +16,6 @@
     <string name="temperature">Temperature</string>
     <string name="unit">Unit</string>
     <string name="convert">Convert</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
 </resources>

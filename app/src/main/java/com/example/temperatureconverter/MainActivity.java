@@ -6,8 +6,10 @@ import androidx.core.content.ContextCompat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.google.android.material.button.MaterialButton;
 
 import java.text.DecimalFormat;
@@ -15,7 +17,10 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textView1, textView2;
-    Spinner spinner01,spinner02;
+    //    Spinner spinner01,spinner02;
+    ArrayAdapter<String> adapter;
+    AutoCompleteTextView autoCompleteTextView,autoCompleteTextView2;
+    String[] temp1;
     private static final DecimalFormat df = new DecimalFormat("0.00");
 
     @Override
@@ -35,14 +40,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.black));
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        spinner01 = (Spinner) findViewById(R.id.spinner1);
-        spinner02 = (Spinner) findViewById(R.id.spinner2);
-        ArrayAdapter<CharSequence> adapter01 = ArrayAdapter.createFromResource(this, R.array.temperature_array, android.R.layout.simple_spinner_item);
-        ArrayAdapter<CharSequence> adapter02 = ArrayAdapter.createFromResource(this, R.array.temperature1_array, android.R.layout.simple_spinner_item);
-        adapter01.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        adapter02.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner01.setAdapter(adapter01);
-        spinner02.setAdapter(adapter02);
+        temp1 = new String[]{"Celsius(°C)", "Fahrenheit(°F)", "Kelvin(K)", "Rankine(°R)"};
+        adapter = new ArrayAdapter<>(this, R.layout.drop_down_item, temp1);
+        autoCompleteTextView = findViewById(R.id.filled_temp);
+        autoCompleteTextView2 = findViewById(R.id.filled_temp2);
+        autoCompleteTextView.setAdapter(adapter);
+        autoCompleteTextView2.setAdapter(adapter);
+
 
         textView1 = findViewById(R.id.temp1);
         textView2 = findViewById(R.id.temp2);
@@ -90,11 +94,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 data = df.format(x);
                 break;
             case "Convert":
-                String text1 = spinner01.getSelectedItem().toString();
-                String text2 = spinner02.getSelectedItem().toString();
+                String text1 = autoCompleteTextView.getText().toString();
+                String text2 = autoCompleteTextView2.getText().toString();
                 textView1.setText(text1);
-                if(text1.equals(""))
-                {
+                if (text1.equals("")) {
                     break;
                 }
                 int select = -1;
@@ -179,10 +182,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public String K_R(double temp1, int i) {
         if (i == 1) {
-            double R = temp1 * 9/5;
+            double R = temp1 * 9 / 5;
             return df.format(R);
         } else {
-            double K = temp1 *  5/9;
+            double K = temp1 * 5 / 9;
             return df.format(K);
         }
     }
@@ -190,11 +193,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public String F_R(double temp1, int i) {
         if (i == 1) {
 
-            double R=temp1+459.67;
+            double R = temp1 + 459.67;
             return df.format(R);
         } else {
 
-            double F = temp1-459.67;
+            double F = temp1 - 459.67;
             return df.format(F);
         }
     }
@@ -236,7 +239,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return df.format(F);
         } else {
             double C = (tmp - 32) * 5 / 9;
-            return  df.format(C);
+            return df.format(C);
         }
     }
 }
